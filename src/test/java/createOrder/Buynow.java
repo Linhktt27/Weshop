@@ -132,7 +132,7 @@ public class Buynow {
 		WebDriverWait wait = new WebDriverWait(driver, 20);
 		WebElement popup = wait.until(ExpectedConditions.visibilityOfElementLocated(checkout.popupsuccess));
 		Assert.assertTrue(popup.isDisplayed());
-	}*/
+	}
 	@When("^Truy cập vào trang chi tiết sản phẩm Ebay$")
 	public void truy_cập_vào_trang_chi_tiết_sản_phẩm_Ebay() throws Throwable {
 	    driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
@@ -232,7 +232,7 @@ public class Buynow {
 		wait.until(ExpectedConditions.invisibilityOfElementLocated(checkout.waiticon));
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,200)");
-		driver.findElement(checkout.btnCheckout);		
+		driver.findElement(checkout.btnCheckout).click();	
 	}
 
 	@Then("^Show popup thông báo mua hàng thành công và link sang cổng thanh toán$")
@@ -243,22 +243,25 @@ public class Buynow {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(checkout.GateNL));
 		String urlgate = driver.getCurrentUrl();
 		Assert.assertTrue(urlgate.contains("https://sandbox.nganluong.vn:8088/nl35/checkout/version31/request/token_code/"));		
-	}
+	}*/
 
-	/*@When("^Truy cập vào màn hình bill request$")
+	@When("^Truy cập vào màn hình bill request$")
 	public void truy_cập_vào_màn_hình_bill_request() throws Throwable {
-	   driver.get("http://weshop.com.vn/order-e7224716338b/bill.html");
+	   driver.get("https://weshop.com.vn/order-02784885583b/bill.html");
 	}
 
 	@When("^Chọn button Thanh toán$")
 	public void chọn_button_Thanh_toán() throws Throwable {
 		WebDriverWait wait = new WebDriverWait(driver, 20);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,700)");
 		wait.until(ExpectedConditions.visibilityOfElementLocated(checkout.Checkoutrequest1)).click();
 	}
 
 	@When("^Chọn Phương thức Thanh toán qua Chuyển khoản ngân hàng$")
 	public void chọn_Phương_thức_Thanh_toán_qua_Chuyển_khoản_ngân_hàng() throws Throwable {
 		WebDriverWait wait = new WebDriverWait(driver, 20); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(checkout.MethodBankTransfer)).click();
 		wait.until(ExpectedConditions.visibilityOfElementLocated(checkout.OptBankTransfer)).click();
 		wait.until(ExpectedConditions.invisibilityOfElementLocated(checkout.waiticon));
 		driver.findElement(checkout.OtpCondition).click();
@@ -283,7 +286,14 @@ public class Buynow {
 	public void truy_cập_vào_màn_hình_bill_addfee() throws Throwable {
 	  driver.get("https://weshop.com.vn/addfee-e7224716338bfee143769/bill.html");
 	}
-
+	
+	@When("^Chọn button Thanh toán addfee$")
+	public void chọn_button_Thanh_toán_addfee() throws Throwable {
+		WebDriverWait wait = new WebDriverWait(driver, 20);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,400)");
+		wait.until(ExpectedConditions.visibilityOfElementLocated(checkout.Checkoutaddfee1)).click();
+	}
 	@When("^Chọn Phương thức Thanh toán qua Visa$")
 	public void chọn_Phương_thức_Thanh_toán_qua_Visa() throws Throwable {
 	WebDriverWait wait = new WebDriverWait(driver, 20);
@@ -306,7 +316,6 @@ public class Buynow {
 		String urlgate = driver.getCurrentUrl();
 		Assert.assertTrue(urlgate.contains("https://sandbox.nganluong.vn:8088/nl35/checkout/version31/request/token_code/")); 
 	}
-*/
 
 @After
 public void tearDown(Scenario scenario) throws IOException {

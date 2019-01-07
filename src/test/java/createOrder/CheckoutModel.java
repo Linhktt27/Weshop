@@ -19,8 +19,10 @@ public class CheckoutModel {
  By waiticon = By.xpath("//*[@id=\"loading-amz\"]/div");
  By CheckoutCart = By.xpath("/html/body/div[11]/div/div[2]/div[2]/div[2]/div/div[2]");
  By GateNL = By.xpath("/html/body/div/div[3]");
+ By Checkoutaddfee1 = By.xpath("/html/body/div[11]/div/div/div[5]/button");
  By Checkoutrequest1 = By.xpath("//*[@id=\"btnCheckoutBill\"]");
- By OptBankTransfer = By.xpath("//*[@id=\"otherCheckout\"]/div/div/div[2]/div/div[1]/div[1]/ul/li[2]/a/span");
+ By MethodBankTransfer = By.xpath("//*[@id=\"otherCheckout\"]/div/div/div[2]/div/div[1]/div[1]/ul/li[2]/a/span");
+ By OptBankTransfer = By.xpath("//*[@id=\"bankOptions\"]/option[1]");
  By BtnAgree = By.xpath("//*[@id=\"vn-btn-agree\"]");
  By CheckoutRequest2 = By.xpath("//*[@id=\"btnSubmit\"]");
  By OptVisa = By.xpath("//*[@id=\"otherCheckout\"]/div/div/div[2]/div/div[1]/div[1]/ul/li[1]/a/span");
