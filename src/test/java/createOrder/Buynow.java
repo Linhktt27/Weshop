@@ -40,7 +40,7 @@ public class Buynow {
 		driver.manage().window().maximize();
 		driver.get("https://weshop.com.vn");
 	}
-	/*@When("^Truy cập vào trang chi tiết sản phẩm$")
+	@When("^Truy cập vào trang chi tiết sản phẩm$")
 	public void truy_cập_vào_trang_chi_tiết_sản_phẩm() throws Throwable {
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.get("https://weshop.com.vn/ebay/item/4-fork-tip-eyebrow-pencil-waterproof-eyebrow-tattoo-pen-lasting-makeup-acces-332731790890.html");
@@ -243,7 +243,8 @@ public class Buynow {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(checkout.GateNL));
 		String urlgate = driver.getCurrentUrl();
 		Assert.assertTrue(urlgate.contains("https://sandbox.nganluong.vn:8088/nl35/checkout/version31/request/token_code/"));		
-	}*/
+	}
+	
 
 	@When("^Truy cập vào màn hình bill request$")
 	public void truy_cập_vào_màn_hình_bill_request() throws Throwable {
